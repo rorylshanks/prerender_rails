@@ -114,7 +114,7 @@ module Rack
 
         prerendered_response = get_prerendered_page_response(env)
         
-        if prerendered_response && prerendered_response.code == 200
+        if prerendered_response && prerendered_response.code == "200"
           response = build_rack_response_from_prerender(prerendered_response)
           after_render(env, prerendered_response)
           return response.finish
